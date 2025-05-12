@@ -1,0 +1,208 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #fff;
+  }
+  
+  /* Header */
+  header {
+    background-color: #8075D1 ;
+    padding: 20px;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #f8d0ff;
+    font-weight: 500;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .search input {
+    padding: 8px 12px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+  }
+  
+  .search button {
+    padding: 8px 15px;
+    background-color: #00b3ff;
+    color: #fff;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 60px 20px;
+    background-color: #8075D1;
+  }
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .hero-texto {
+    flex: 1 1 50%;
+    padding-right: 30px;
+  }
+  
+  .hero-texto h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  
+  .hero-texto p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .boton {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #00b3ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+  
+  .hero-img {
+    flex: 1 1 40%;
+    text-align: center;
+  }
+  
+  .hero-img img {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+  .filosofia {
+    background-color: #f9f2eb;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .caracteristicas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    max-height: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    color: #2d2d2d;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .descripcion h2 {
+    font-size: 36px;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+  }
+  
+  .descripcion p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .boton {
+    background-color: #00b3ff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+  }
+  
+  .boton:hover {
+    background-color: #5c005c;
+  }
+  .contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}

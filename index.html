@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaWeb</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #c5d4dd;
+            background-image: url('fondo.png');
+    background-repeat: repeat;
+    background-size: auto;
+        }
+
+        header {
+            background-color: #708599;
+            background-image: url('fon.png');
+    background-repeat: repeat;
+            color: rgb(8, 8, 8);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideDown 1s ease-out;
+            border-radius: 10px;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background-image: src="pastillas.jpg";
+            background-size: cover;
+            background-position: center;
+            color: rgb(0, 0, 0);
+            padding: 60px 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            font-family: 'Montserrat', sans-serif
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 1.2em;
+            font-family: 'Montserrat', sans-serif
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #041d35;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2em;
+            color: #041d35;
+        }
+
+        .interactive-box {
+            background: #e6f0ff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .interactive-box button {
+            background: #041d35;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .interactive-box button:hover {
+            background-color: #041d35;
+            transform: scale(1.05);
+        }
+
+footer {
+            background-image: url('fondo2.png');
+            background-repeat: repeat;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s;
+        }        
+        
+.slider-header-js {
+    position: relative;
+    width: 500px;  /* Puedes ajustar el tamaño aquí */
+    height: 180px; /* Altura del carrusel */
+    overflow: hidden;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(3, 3, 0, 0.336)
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+.slider-wrapper a {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.slider-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    background-color: white;
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.slider-btn.prev {
+    left: 5px;
+}
+
+.slider-btn.next {
+    right: 5px;
+}
+
+.slider-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.cards-horizontal {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 0.95em;
+    color: #333;
+}
+
+.search-box {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #0a74da;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: white;
+    transition: box-shadow 0.3s;
+}
+
+.search-box:hover {
+    box-shadow: 0 0 10px rgba(10, 116, 218, 0.3);
+}
+
+.search-input {
+    border: none;
+    padding: 12px 20px;
+    width: 300px;
+    font-size: 1em;
+    outline: none;
+    border-radius: 30px 0 0 30px;
+}
+
+.search-button {
+    background-color: #0a74da;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 0 30px 30px 0;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #005bb5;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><i class="fas fa-capsules"></i> PharmaWeb</div>
+    
+        <div class="slider-header-js">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <a href="tiposmedicamentos.html" >
+                    <img src="tipomed.png" alt="Paracetamol">
+                </a>
+                <a href="peligro.html">
+                    <img src="peligromed.jpg" alt="Ibuprofeno">
+                </a>
+                <a href="medicamentos.html" >
+                    <img src="masmed.jpg" alt="Amoxicilina">
+                </a>
+            </div>
+            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    
+        <nav>
+            <ul>
+                <li><a href="tiposmedicamentos.html"><i class="fas 	fa-syringe"></i> Tipos</a></li>
+                <li><a href="peligro.html"><i class="fas fa-skull-crossbones"></i> Peligros</a></li>
+                <li><a href="medicamentos.html"><i class="fas fa-book-medical"></i> Mas usados</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section class="hero" id="inicio">
+        <img src="logo.png" width="170" height="170"> 
+        <h2>Bienvenido a PharmaWeb</h2>
+        
+        <p>PharmaWeb es una plataforma informativa dedicada a ofrecer contenido confiable y accesible sobre el mundo de los medicamentos. Nuestro objetivo es brindar a los usuarios conocimientos claros sobre el uso adecuado de los fármacos, sus componentes, indicaciones, efectos secundarios, interacciones, y recomendaciones generales de salud.
+
+            Aquí encontrarás artículos, guías y recursos sobre medicamentos de uso común y especializado, así como temas relacionados con la automedicación, prescripción médica, normativas sanitarias y avances en la industria farmacéutica. Ya seas estudiante, profesional de la salud o simplemente alguien que busca informarse mejor, PharmaWeb es tu espacio para aprender sobre medicamentos de forma segura y responsable.
+            
+            </p>
+    </section>
+
+    
+    <div class="cards-horizontal">
+        <div class="info-card">
+            <a href="https://www.youtube.com/watch?v=TEwFUllcmoU"  target="_blank"> <img src="medventalibre.webp" alt="Medicamento 1">  </a>
+            <p>Los medicamentos de venta libre, también conocidos como medicamentos sin receta o OTC (Over The Counter), son aquellos que se pueden comprar sin una receta médica. Se utilizan para tratar una variedad de afecciones menores y síntomas como dolor, fiebre, alergias, tos, resfriados, entre otros. </p>
+        </div>
+        <div class="info-card">
+            <a href="https://www.youtube.com/watch?v=BodGDo1zRr4"  target="_blank"> <img src="medaltoriesgo.webp" alt="Medicamento 2"> </a>
+            <p>Los medicamentos de alto riesgo son aquellos que, si no se utilizan correctamente, tienen una alta probabilidad de causar daños graves o incluso mortales a los pacientes. Se caracterizan por tener una estrecha ventana terapéutica, o por ser fácil que se produzcan errores en su dosificación o administración. </p>
+        </div>
+        <div class="info-card">
+            <a href="https://www.youtube.com/watch?v=A_vFfjHV4WI"  target="_blank"> <img src="medcontrol.jpg" alt="Medicamento 3"> </a>
+            
+            <p>Los medicamentos de control especial son aquellos que contienen sustancias que pueden generar dependencia o ser utilizados con fines no médicos. Su comercialización está restringida y requieren de una fórmula médica especial para su dispensación. Estos medicamentos se identifican usualmente con una franja violeta en su empaque.</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="info">
+        <div class="card">
+            <i class="fas fa-tablets"></i>
+            <a href="https://www.google.com/maps/search/droguerías+cerca+de+mí" target="_blank" style="text-decoration: none; color: inherit;"><div>
+                <h3>Todo sobre las droguerias</h3>
+                <p>Descubre las distintas droguerias cerca de ti.</p>
+            </div>
+            </a>
+        </div>
+        <div class="card">
+            <i class="fas fa-notes-medical"></i>
+            <a href="https://medlineplus.gov/spanish/ency/patientinstructions/000952.htm#:~:text=Mantenga%20todos%20los%20medicamentos%20en,que%20necesita%20tomar%20cada%20d%C3%ADa." target="_blank" style="text-decoration: none; color: inherit;">
+            <div>
+                <h3>Recomendaciones</h3>
+                <p>Consejos para el uso adecuado, almacenamiento y combinación segura de medicamentos.</p>
+            </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="busqueda" style="padding: 50px 20px; text-align: center;">
+        <h2><i class="fas fa-search"></i> ¿Tienes una pregunta sobre medicamentos?</h2>
+      
+        <form id="searchForm" onsubmit="buscarEnGoogle(event)" class="search-box">
+            <input type="text" id="busquedaInput" placeholder="Ej: ¿Qué es el paracetamol?" class="search-input">
+            <button type="submit" class="search-button"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </section>
+
+    <section id="info-extra">
+
+    <section id="educacion">
+        <h2>Tips rápidos</h2>
+        <div class="interactive-box">
+            <p id="tip-text">Siempre consulta a tu médico antes de tomar un medicamento nuevo.</p>
+            <button onclick="prevTip()">&#9664; Anterior</button>
+            <button onclick="nextTip()">Siguiente &#9654;</button>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes dudas o sugerencias? Escríbenos a <a href="mailto:PharmaWeb@gmail.com">PharmaWeb@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 PharmaWeb - Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const tips = [
+            "Siempre consulta a tu médico antes de tomar un medicamento nuevo.",
+            "Evita la automedicación, incluso si los síntomas parecen menores.",
+            "Lee el prospecto de cada medicamento antes de usarlo.",
+            "No combines medicamentos sin orientación médica.",
+            "Guarda los medicamentos fuera del alcance de los niños."
+        ];
+
+        let currentTip = 0;
+
+        function showTip(index) {
+            const tipText = document.getElementById("tip-text");
+            tipText.style.opacity = 0;
+            setTimeout(() => {
+                tipText.textContent = tips[index];
+                tipText.style.opacity = 1;
+            }, 300);
+        }
+
+        function nextTip() {
+            currentTip = (currentTip + 1) % tips.length;
+            showTip(currentTip);
+        }
+
+        function prevTip() {
+            currentTip = (currentTip - 1 + tips.length) % tips.length;
+            showTip(currentTip);
+        }
+
+
+        let currentIndex = 0;
+    const slides = document.querySelectorAll('.slider-wrapper a');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        const slider = document.getElementById('sliderWrapper');
+        if (index >= totalSlides) currentIndex = 0;
+        else if (index < 0) currentIndex = totalSlides - 1;
+        else currentIndex = index;
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function moveSlide(direction) {
+        showSlide(currentIndex + direction);
+    }
+
+    // Auto-advance every 5 seconds
+    setInterval(() => {
+        moveSlide(1);
+    }, 5000);
+
+    function buscarEnGoogle(event) {
+        event.preventDefault(); // evita que se recargue la página
+        const query = document.getElementById("busquedaInput").value.trim();
+        if (query !== "") {
+            const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(googleUrl, "_blank"); // abre Google en una nueva pestaña
+        }
+    }
+    </script>
+</body>
+</html>
+
